@@ -1,0 +1,39 @@
+<assemblies timestamp="06/14/2024 08:36:19">
+  <assembly name="/Users/shuanghe/Desktop/NewPlace/SampleLog/SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll" run-date="2024-06-14" run-time="08:36:19" total="1" passed="0" failed="1" skipped="0" time="3.003" errors="0">
+    <errors />
+    <collection total="1" passed="0" failed="1" skipped="0" name="Test collection for SpecFlowLivingDocProject.Test.Features.CalculatorFeature" time="0.097">
+      <test name="Add two numbers" type="SpecFlowLivingDocProject.Test.Features.CalculatorFeature" method="AddTwoNumbers" time="0.0973181" result="Fail">
+        <output>When I add two Numbers
+Starting TestMethod
+Expected: 5, Actual: 6
+-&gt; error: Assert.Equal() Failure: Values differ
+Expected: 5
+Actual:   6 (0.0s)
+
+</output>
+        <failure>
+          <message>Assert.Equal() Failure: Values differ
+Expected: 5
+Actual:   6</message>
+          <stack-trace>   at MyTests.TestMethod() in /Users/shuanghe/Desktop/NewPlace/SampleLog/SpecFlowLivingDocProject/Test/Steps/Program.cs:line 27
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan&amp; duration)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at SpecFlowLivingDocProject.Test.Features.CalculatorFeature.ScenarioCleanup()
+   at SpecFlowLivingDocProject.Test.Features.CalculatorFeature.AddTwoNumbers() in /Users/shuanghe/Desktop/NewPlace/SampleLog/SpecFlowLivingDocProject/Test/Features/Calculator.feature:line 8
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</stack-trace>
+        </failure>
+        <traits>
+          <trait name="FeatureTitle" value="Calculator" />
+          <trait name="Description" value="Add two numbers" />
+          <trait name="Category" value="Eva" />
+        </traits>
+      </test>
+    </collection>
+  </assembly>
+</assemblies>
