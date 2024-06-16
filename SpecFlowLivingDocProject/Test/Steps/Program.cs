@@ -15,7 +15,7 @@ public class MyTests
 
     [Fact]
     [When(@"I add two Numbers Core")]
-    public void TestMethod()
+    public void AddTwoNumberCore()
     {
         _output.WriteLine("Starting TestMethod");
         
@@ -31,7 +31,7 @@ public class MyTests
 
     [Fact]
     [When(@"I add two Numbers SmokeTest")]
-    public void TestMethod()
+    public void AddTwoNumberSmokeTest()
     {
         _output.WriteLine("Starting TestMethod");
         

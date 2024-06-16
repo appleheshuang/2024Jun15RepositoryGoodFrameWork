@@ -102,7 +102,7 @@ namespace SpecFlowLivingDocProject.Test.Features
             {
                 this.ScenarioStart();
 #line 10
-  testRunner.When("I add two Numbers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("I add two Numbers Core", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -129,7 +129,7 @@ namespace SpecFlowLivingDocProject.Test.Features
             {
                 this.ScenarioStart();
 #line 15
-  testRunner.When("I add two Numbers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("I add two Numbers SmokeTest", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
             this.ScenarioCleanup();
