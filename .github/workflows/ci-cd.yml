@@ -1,0 +1,68 @@
+name: .NET Core CI/CD
+
+on:
+  push:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore
+
+  SmokeTest:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Test
+        run: |
+          mkdir -p TestResults
+          dotnet test --filter TestCategory=SmokeTest --logger:"trx;LogFileName=SmokeTest_$(date +%Y%m%d%H%M%S).xml" --results-directory TestResults
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: smoke-test-results
+          path: TestResults/
+
+  CoreTest:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Test
+        run: |
+          mkdir -p TestResults
+          dotnet test --filter TestCategory=Core --logger:"trx;LogFileName=Core_$(date +%Y%m%d%H%M%S).xml" --results-directory TestResults
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: core-test-results
+          path: TestResults/

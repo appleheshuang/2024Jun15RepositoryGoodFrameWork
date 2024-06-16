@@ -91,7 +91,7 @@ namespace SpecFlowLivingDocProject.Test.Features
                     "Eva"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 7
+#line 9
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -101,7 +101,7 @@ namespace SpecFlowLivingDocProject.Test.Features
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 10
   testRunner.When("I add two Numbers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
