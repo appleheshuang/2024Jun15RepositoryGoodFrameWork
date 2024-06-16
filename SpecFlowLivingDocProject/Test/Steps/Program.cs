@@ -20,7 +20,7 @@ public class MyTests
         _output.WriteLine("Starting TestMethod");
         
         int expected = 5;
-        int actual = 2 + 4;
+        int actual = 1 + 4;
         
         _output.WriteLine($"Expected: {expected}, Actual: {actual}");
         

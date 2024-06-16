@@ -1,0 +1,21 @@
+<assemblies timestamp="06/16/2024 22:28:57">
+  <assembly name="/Users/shuanghe/Desktop/NewPlace/SampleLog/SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll" run-date="2024-06-16" run-time="22:28:57" total="1" passed="1" failed="0" skipped="0" time="8.720" errors="0">
+    <errors />
+    <collection total="1" passed="1" failed="0" skipped="0" name="Test collection for SpecFlowLivingDocProject.Test.Features.CalculatorFeature" time="0.147">
+      <test name="Add two numbers Core" type="SpecFlowLivingDocProject.Test.Features.CalculatorFeature" method="AddTwoNumbersCore" time="0.1467615" result="Pass">
+        <output>When I add two Numbers Core
+Starting TestMethod
+Expected: 5, Actual: 5
+TestMethod completed successfully
+-&gt; done: MyTests.AddTwoNumberCore() (0.0s)
+
+</output>
+        <traits>
+          <trait name="FeatureTitle" value="Calculator" />
+          <trait name="Description" value="Add two numbers Core" />
+          <trait name="Category" value="Core" />
+        </traits>
+      </test>
+    </collection>
+  </assembly>
+</assemblies>
