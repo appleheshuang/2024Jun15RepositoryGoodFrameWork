@@ -45,6 +45,7 @@ jobs:
           livingdoc test-assembly SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll -t SpecFlowLivingDocProject/bin/Debug/net8.0/TestExecution.json --output ./TestResults/Core_$(date +%Y%m%d%H%M%S).html 
 
       - name: List TestResults directory contents
+        if: always()
         run: ls -la /home/runner/work/2024Jun15Repository/2024Jun15Repository/TestResults/
 
       - name: Upload artifact
