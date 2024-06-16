@@ -10,6 +10,6 @@ Feature: Calculator
   When I add two Numbers Core
 
 
-@SmokeTest
+@Core
   Scenario: Add two numbers SmokeTest
   When I add two Numbers SmokeTest
