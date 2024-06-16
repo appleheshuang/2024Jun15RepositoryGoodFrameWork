@@ -45,6 +45,7 @@ jobs:
           livingdoc test-assembly SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll -t SpecFlowLivingDocProject/bin/Debug/net8.0/TestExecution.json --output ./TestResults/Core_$(date +%Y%m%d%H%M%S).html 
 
       - name: Upload artifact
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: smoke-test-results
@@ -71,6 +72,7 @@ jobs:
           livingdoc test-assembly SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll -t SpecFlowLivingDocProject/bin/Debug/net8.0/TestExecution.json --output ./TestResults/SmokeTest_$(date +%Y%m%d%H%M%S).html 
 
       - name: Upload artifact
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: core-test-results
