@@ -40,8 +40,7 @@ jobs:
       - name: Test
         run: |
           mkdir -p TestResults
-          # dotnet test --filter TestCategory=SmokeTest --logger:"trx;LogFileName=SmokeTest_$(date +%Y%m%d%H%M%S).xml" --results-directory TestResults
-          dotnet test --test-adapter-path:. --filter "Category=Core" --logger:"xunit;LogFilePath=TestResults/SetupTests.xml" 
+          dotnet test --test-adapter-path:. --filter "Category=SmokeTest" --logger:"xunit;LogFilePath=TestResults/SetupTests.xml" 
           livingdoc test-assembly SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll -t SpecFlowLivingDocProject/bin/Debug/net8.0/TestExecution.json --output ./TestResults/Core_$(date +%Y%m%d%H%M%S).html 
 
       - name: List TestResults directory contents
@@ -72,7 +71,7 @@ jobs:
       - name: Test
         run: |
           mkdir -p TestResults
-          dotnet test --test-adapter-path:. --filter "Category=SmokeTest" --logger:"xunit;LogFilePath=TestResults/SetupTests.xml" --results-directory TestResults
+          dotnet test --test-adapter-path:. --filter "Category=Core" --logger:"xunit;LogFilePath=TestResults/SetupTests.xml" --results-directory TestResults
           livingdoc test-assembly SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll -t SpecFlowLivingDocProject/bin/Debug/net8.0/TestExecution.json --output ./TestResults/SmokeTest_$(date +%Y%m%d%H%M%S).html 
 
       - name: Upload artifact
