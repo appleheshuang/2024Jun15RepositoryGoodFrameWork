@@ -5,6 +5,11 @@ Feature: Calculator
   #dotnet test --test-adapter-path:. --filter "Category=Eva" --logger:"xunit;LogFilePath=DigitalTestResults/SetupTests.xml"
   #livingdoc test-assembly bin/Debug/net8.0/SpecFlowLivingDocProject.dll -t bin/Debug/net8.0/TestExecution.json --output ./TestResults/TestResultsCore_$(date +%Y%m%d%H%M%S).html 
 
-@Eva
-  Scenario: Add two numbers
+@Core
+  Scenario: Add two numbers Core
+  When I add two Numbers
+
+
+@SmokeTest
+  Scenario: Add two numbers SmokeTest
   When I add two Numbers
