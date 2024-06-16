@@ -7,9 +7,9 @@ Feature: Calculator
 
 @Core
   Scenario: Add two numbers Core
-  When I add two Numbers
+  When I add two Numbers Core
 
 
 @SmokeTest
   Scenario: Add two numbers SmokeTest
-  When I add two Numbers
+  When I add two Numbers SmokeTest

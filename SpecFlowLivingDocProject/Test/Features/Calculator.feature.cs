@@ -81,16 +81,16 @@ namespace SpecFlowLivingDocProject.Test.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Add two numbers")]
+        [Xunit.SkippableFactAttribute(DisplayName="Add two numbers Core")]
         [Xunit.TraitAttribute("FeatureTitle", "Calculator")]
-        [Xunit.TraitAttribute("Description", "Add two numbers")]
-        [Xunit.TraitAttribute("Category", "Eva")]
-        public void AddTwoNumbers()
+        [Xunit.TraitAttribute("Description", "Add two numbers Core")]
+        [Xunit.TraitAttribute("Category", "Core")]
+        public void AddTwoNumbersCore()
         {
             string[] tagsOfScenario = new string[] {
-                    "Eva"};
+                    "Core"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers Core", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 9
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -102,6 +102,33 @@ namespace SpecFlowLivingDocProject.Test.Features
             {
                 this.ScenarioStart();
 #line 10
+  testRunner.When("I add two Numbers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Add two numbers SmokeTest")]
+        [Xunit.TraitAttribute("FeatureTitle", "Calculator")]
+        [Xunit.TraitAttribute("Description", "Add two numbers SmokeTest")]
+        [Xunit.TraitAttribute("Category", "SmokeTest")]
+        public void AddTwoNumbersSmokeTest()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "SmokeTest"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers SmokeTest", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 14
+  this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 15
   testRunner.When("I add two Numbers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }

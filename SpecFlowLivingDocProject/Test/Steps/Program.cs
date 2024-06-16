@@ -14,13 +14,29 @@ public class MyTests
     }
 
     [Fact]
-    [When(@"I add two Numbers")]
+    [When(@"I add two Numbers Core")]
     public void TestMethod()
     {
         _output.WriteLine("Starting TestMethod");
         
         int expected = 5;
         int actual = 2 + 4;
+        
+        _output.WriteLine($"Expected: {expected}, Actual: {actual}");
+        
+        Assert.Equal(expected, actual);
+
+        _output.WriteLine("TestMethod completed successfully");
+    }
+
+    [Fact]
+    [When(@"I add two Numbers SmokeTest")]
+    public void TestMethod()
+    {
+        _output.WriteLine("Starting TestMethod");
+        
+        int expected = 5;
+        int actual = 1 + 4;
         
         _output.WriteLine($"Expected: {expected}, Actual: {actual}");
         
