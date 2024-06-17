@@ -39,13 +39,13 @@ jobs:
 
       - name: Test
         run: |
+          cd SpecFlowLivingDocProject
           mkdir -p TestResults
-          dotnet test --test-adapter-path:. --filter "Category=SmokeTest" --logger:"xunit;LogFilePath=/TestResults/SetupTests__$(date +%Y%m%d%H%M%S).xml" 
-          # livingdoc test-assembly SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll -t SpecFlowLivingDocProject/bin/Debug/net8.0/TestExecution.json --output SpecFlowLivingDocProject/TestResults/SmokeTest_$(date +%Y%m%d%H%M%S).html 
-
-      - name: List TestResults directory contents
+          dotnet test --test-adapter-path:. --filter "Category=SmokeTest" --logger:"xunit;LogFilePath=$(pwd)/TestResults/SmokeTestsLog_$(date +%Y%m%d%H%M%S).xml"
+     
+      - name: Generate Living Document
         if: always()
-        run: ls -la /home/runner/work/2024Jun15Repository/2024Jun15Repository/SpecFlowLivingDocProject/TestResults/
+        run: livingdoc test-assembly SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll -t SpecFlowLivingDocProject/bin/Debug/net8.0/TestExecution.json --output SpecFlowLivingDocProject/TestResults/SmokeTest_$(date +%Y%m%d%H%M%S).html 
 
       - name: Upload artifact
         if: always()
