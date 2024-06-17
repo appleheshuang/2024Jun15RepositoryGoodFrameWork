@@ -40,7 +40,7 @@ jobs:
       - name: Test
         run: |
           mkdir -p TestResults
-          dotnet test --test-adapter-path:. --filter "Category=SmokeTest" --logger:"xunit;LogFilePath=SpecFlowLivingDocProject/TestResults/SetupTests.xml" 
+          dotnet test --test-adapter-path:. --filter "Category=SmokeTest" --logger:"xunit;LogFilePath=/TestResults/SetupTests__$(date +%Y%m%d%H%M%S).xml" 
           # livingdoc test-assembly SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll -t SpecFlowLivingDocProject/bin/Debug/net8.0/TestExecution.json --output SpecFlowLivingDocProject/TestResults/SmokeTest_$(date +%Y%m%d%H%M%S).html 
 
       - name: List TestResults directory contents
@@ -75,7 +75,7 @@ jobs:
         run: |
           cd SpecFlowLivingDocProject
           mkdir -p TestResults
-          dotnet test --test-adapter-path:. --filter "Category=Core" --logger:"xunit;LogFilePath=SpecFlowLivingDocProject/TestResults/SetupTests.xml"
+          dotnet test --test-adapter-path:. --filter "Category=Core" --logger:"xunit;LogFilePath=/TestResults/CoreSetupTests_$(date +%Y%m%d%H%M%S).xml"
      
       - name: List TestResults directory contents1
         if: always()
