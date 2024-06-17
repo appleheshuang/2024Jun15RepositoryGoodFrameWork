@@ -111,11 +111,11 @@ namespace SpecFlowLivingDocProject.Test.Features
         [Xunit.SkippableFactAttribute(DisplayName="Add two numbers SmokeTest")]
         [Xunit.TraitAttribute("FeatureTitle", "Calculator")]
         [Xunit.TraitAttribute("Description", "Add two numbers SmokeTest")]
-        [Xunit.TraitAttribute("Category", "SmokeTest")]
+        [Xunit.TraitAttribute("Category", "Core")]
         public void AddTwoNumbersSmokeTest()
         {
             string[] tagsOfScenario = new string[] {
-                    "SmokeTest"};
+                    "Core"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers SmokeTest", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 14
