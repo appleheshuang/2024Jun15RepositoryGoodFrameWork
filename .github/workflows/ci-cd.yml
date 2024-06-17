@@ -72,7 +72,7 @@ jobs:
         run: |
           cd SpecFlowLivingDocProject
           mkdir -p TestResults
-          dotnet test --test-adapter-path:. --filter "Category=Core" --logger:"xunit;LogFilePath=/TestResults/SetupTests.xml"
+          dotnet test --test-adapter-path:. --filter "Category=Core" --logger:"xunit;LogFilePath=SpecFlowLivingDocProject/TestResults/SetupTests.xml"
      
       - name: List TestResults directory contents1
         if: always()
