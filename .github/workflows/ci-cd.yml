@@ -52,7 +52,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: smoke-test-results
-          path: TestResults/
+          path: SpecFlowLivingDocProject/TestResults/
 
   CoreTest:
     runs-on: ubuntu-latest
