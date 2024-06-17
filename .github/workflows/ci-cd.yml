@@ -67,6 +67,9 @@ jobs:
 
       - name: project restore
         run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore
       
       - name: Install Livingdoc
         run: dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
@@ -75,11 +78,11 @@ jobs:
         run: |
           cd SpecFlowLivingDocProject
           mkdir -p TestResults
-          dotnet test --test-adapter-path:. --filter "Category=Core" --logger:"xunit;LogFilePath=/TestResults/CoreSetupTests_$(date +%Y%m%d%H%M%S).xml"
+          dotnet test --test-adapter-path:. --filter "Category=Core" --logger:"xunit;LogFilePath=$(pwd)/TestResults/CoreSetupTests_$(date +%Y%m%d%H%M%S).xml"
      
       - name: List TestResults directory contents1
         if: always()
-        run: ls -la /home/runner/work/2024Jun15Repository/2024Jun15Repository/SpecFlowLivingDocProject/TestResults/
+        run: ls -la $(pwd)/TestResults/
 
       - name: Generate Living Document
         if: always()
