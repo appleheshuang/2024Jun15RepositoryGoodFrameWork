@@ -75,7 +75,7 @@ jobs:
         run: |
           cd SpecFlowLivingDocProject
           mkdir -p TestResults
-          dotnet test --test-adapter-path:. --filter "Category=Core" --logger:"xunit;LogFilePath=/TestResults/CoreSetupTests_$(date +%Y%m%d%H%M%S).xml"
+          dotnet test --test-adapter-path:. --filter "Category=Core" --logger:"xunit;LogFilePath=/TestResults/CoreSetupTests_$(date +%Y%m%d%H%M%S).xml" --output SpecFlowLivingDocProject/TestResults/CoreSetupTests_$(date +%Y%m%d%H%M%S).html 
      
       - name: List TestResults directory contents1
         if: always()
