@@ -40,12 +40,12 @@ jobs:
       - name: Test
         run: |
           mkdir -p TestResults
-          dotnet test --test-adapter-path:. --filter "Category=SmokeTest" --logger:"xunit;LogFilePath=TestResults/SetupTests.xml" 
-          livingdoc test-assembly SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll -t SpecFlowLivingDocProject/bin/Debug/net8.0/TestExecution.json --output ./TestResults/SmokeTest_$(date +%Y%m%d%H%M%S).html 
+          dotnet test --test-adapter-path:. --filter "Category=SmokeTest" --logger:"xunit;LogFilePath=SpecFlowLivingDocProject/TestResults/SetupTests.xml" 
+          livingdoc test-assembly SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll -t SpecFlowLivingDocProject/bin/Debug/net8.0/TestExecution.json --output SpecFlowLivingDocProject/TestResults/SmokeTest_$(date +%Y%m%d%H%M%S).html 
 
       - name: List TestResults directory contents
         if: always()
-        run: ls -la /home/runner/work/2024Jun15Repository/2024Jun15Repository/TestResults/
+        run: ls -la /home/runner/work/2024Jun15Repository/2024Jun15Repository/SpecFlowLivingDocProject/TestResults/
 
       - name: Upload artifact
         if: always()
@@ -77,6 +77,10 @@ jobs:
         if: always()
         run: livingdoc test-assembly SpecFlowLivingDocProject/bin/Debug/net8.0/SpecFlowLivingDocProject.dll -t SpecFlowLivingDocProject/bin/Debug/net8.0/TestExecution.json --output SpecFlowLivingDocProject/TestResults/Core_$(date +%Y%m%d%H%M%S).html 
 
+      - name: List TestResults directory contents
+        if: always()
+        run: ls -la /home/runner/work/2024Jun15Repository/2024Jun15Repository/SpecFlowLivingDocProject/TestResults/
+      
       - name: Upload artifact
         if: always()
         uses: actions/upload-artifact@v3
